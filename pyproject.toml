@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-red-watermark-remover"
+version = "1.0.0"
+description = "清除 PDF 中的红色水印（内容流手术法，不损伤图像与正文）"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "YWpepper" }]
+keywords = ["pdf", "watermark", "pymupdf", "dataset", "cleaning"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing",
+]
+dependencies = ["pymupdf>=1.24"]
+
+[project.scripts]
+pdffix = "pdffix.cli:main"
+
+[project.gui-scripts]
+pdffix-gui = "pdffix.gui:launch"
+
+[tool.setuptools.packages.find]
+where = ["src"]
